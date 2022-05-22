@@ -1,0 +1,998 @@
+* {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 100px;
+}
+
+header #home {
+  display: inline-block;
+  position: relative;
+}
+
+header #home::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 15px;
+  width: 100%;
+  height: 2px;
+  background-color: green;
+}
+
+header ul li {
+  display: inline-block;
+  list-style-type: none;
+  padding: 0px 30px;
+  font-size: 14px;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+header a img {
+  width: 205px;
+  height: 25px;
+}
+
+header #img {
+  margin-left: 60px;
+}
+
+header .icons {
+  padding-left: 15px;
+  margin-top: -15px;
+}
+
+header .icons a {
+  color: #3a3030;
+  text-decoration: none;
+  font-size: 19px;
+  padding: 0 10px;
+}
+
+header .icons a p {
+  display: inline;
+  font-size: 12px;
+}
+
+header .icons a .fa-bag-shopping {
+  padding: 0 12px;
+}
+
+header .icons a .fa-magnifying-glass {
+  -webkit-transition: all 1s ease;
+  transition: all 1s ease;
+}
+
+header .icons a .fa-magnifying-glass:hover {
+  -webkit-transform: rotateZ(360deg);
+          transform: rotateZ(360deg);
+  color: red;
+}
+
+.home-dropdown,
+.pages-dropdown,
+.portfolio-dropdown,
+.blog-dropdown,
+.elements-dropdown {
+  position: relative;
+}
+
+.home-dropdown-content,
+.pages-dropdown-content,
+.shop-dropdown-content,
+.portfolio-dropdown-content,
+.blog-dropdown-content,
+.elements-dropdown-content {
+  background: white;
+  position: absolute;
+  left: 15px;
+  min-width: 220px;
+  opacity: 0;
+  pointer-events: none;
+  -webkit-transition: all 0.1s ease;
+  transition: all 0.1s ease;
+}
+
+.home-dropdown-content a,
+.pages-dropdown-content a,
+.shop-dropdown-content a,
+.portfolio-dropdown-content a,
+.blog-dropdown-content a,
+.elements-dropdown-content a {
+  padding: 8px 16px;
+  text-decoration: none;
+  display: block;
+  font-size: 14px;
+}
+
+#home,
+#pages,
+#shop {
+  color: black;
+  text-decoration: none;
+  display: inline-block;
+  position: relative;
+}
+
+#home::before,
+#pages::before,
+#shop::before {
+  background: none repeat scroll 0 0 transparent;
+  bottom: 0;
+  content: "";
+  display: block;
+  height: 1.5px;
+  left: 50%;
+  position: absolute;
+  background: black;
+  -webkit-transition: width 0.3s ease 0s, left 0.3s ease 0s;
+  transition: width 0.3s ease 0s, left 0.3s ease 0s;
+  width: 0;
+}
+
+#home:hover::before,
+#pages:hover::before,
+#shop:hover::before {
+  width: 100%;
+  left: 0;
+}
+
+.portfolio-dropdown a,
+.blog-dropdown a,
+.elements-dropdown a,
+.home-dropdown a,
+.pages-dropdown a,
+.shop-dropdown a {
+  color: black;
+  text-decoration: none;
+  display: block;
+  position: relative;
+}
+
+.portfolio-dropdown a::before,
+.blog-dropdown a::before,
+.elements-dropdown a::before,
+.home-dropdown a::before,
+.pages-dropdown a::before,
+.shop-dropdown a::before {
+  background: none repeat scroll 0 0 transparent;
+  bottom: 0;
+  content: "";
+  display: block;
+  height: 1.5px;
+  left: 50%;
+  position: absolute;
+  background: black;
+  -webkit-transition: width 0.3s ease 0s, left 0.3s ease 0s;
+  transition: width 0.3s ease 0s, left 0.3s ease 0s;
+  width: 0;
+}
+
+.portfolio-dropdown a:hover::before,
+.blog-dropdown a:hover::before,
+.elements-dropdown a:hover::before,
+.home-dropdown a:hover::before,
+.pages-dropdown a:hover::before,
+.shop-dropdown a:hover::before {
+  width: 100%;
+  left: 0;
+}
+
+#cart-count {
+  font-size: 10px;
+  background: #ff0000;
+  color: #fff;
+  padding: 0 2px;
+  vertical-align: top;
+  margin-left: -15px;
+  border-radius: 100%;
+  position: relative;
+  left: -4px;
+  top: 2px;
+}
+
+.portfolio-dropdown-content {
+  min-width: 200px;
+}
+
+.shop-dropdown-content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  position: absolute;
+  min-width: 83%;
+  width: 1075px;
+  left: -250px;
+  padding: 30px;
+}
+
+.shop-dropdown-content h1 {
+  padding-bottom: 10px;
+  font-size: 25px;
+}
+
+.home-dropdown:hover .home-dropdown-content,
+.pages-dropdown:hover .pages-dropdown-content,
+.shop-dropdown:hover .shop-dropdown-content,
+.portfolio-dropdown:hover .portfolio-dropdown-content,
+.blog-dropdown:hover .blog-dropdown-content,
+.elements-dropdown:hover .elements-dropdown-content {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.portfolio-layout-main-sub-menu,
+.blog-main-sub-menu,
+.elements-main-sub-menu {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 100%;
+}
+
+.portfolio-layout-main-sub-menu li,
+.blog-main-sub-menu li {
+  position: relative;
+  left: -20%;
+  padding: 3px 0;
+}
+
+.portfolio-layout-main-sub-menu li a,
+.blog-main-sub-menu li a {
+  width: 100%;
+}
+
+.portfolio-layout-secondary-sub-menu,
+.portfolio-single-secondary-sub-menu,
+.blog-secondary-sub-menu,
+.elements-secondary-sub-menu {
+  background: white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  position: absolute;
+  top: 0px;
+  left: 120%;
+  width: 100%;
+  display: none;
+}
+
+.elements-secondary-sub-menu {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  position: absolute;
+  width: 100%;
+  top: 10px;
+  left: 100%;
+  padding: 8px 0;
+  display: none;
+}
+
+.elements-secondary-sub-menu a {
+  padding: 10px 20px;
+}
+
+.elements-main-sub-menu li {
+  position: relative;
+  text-align: left;
+  padding: 3px 0;
+}
+
+.elements-main-sub-menu li a {
+  width: 100%;
+}
+
+.portfolio-layout-main-sub-menu li:hover .portfolio-layout-secondary-sub-menu,
+.portfolio-layout-main-sub-menu li:hover .portfolio-single-secondary-sub-menu,
+.blog-main-sub-menu li:hover .blog-secondary-sub-menu,
+.elements-main-sub-menu li:hover .elements-secondary-sub-menu {
+  display: block;
+}
+
+.layout-arrow {
+  font-size: 18px;
+  position: relative;
+  left: 18%;
+}
+
+.single-arrow {
+  font-size: 18px;
+  position: relative;
+  left: 24.5%;
+}
+
+.post-arrow {
+  font-size: 18px;
+  position: relative;
+  left: 40%;
+}
+
+.elements-arrow {
+  font-size: 18px;
+  position: relative;
+}
+
+.elements-dropdown-content {
+  text-align: left;
+  left: -85px;
+  min-width: 200px;
+}
+
+.blog-dropdown-content {
+  min-width: 200px;
+}
+
+.sidebar {
+  position: fixed;
+  height: 500px;
+  right: 0;
+  display: none;
+}
+
+.navbar {
+  margin-top: 20px;
+  z-index: 5;
+}
+
+.navbar-2 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  padding: 150px 165px;
+}
+
+.navbar-2 ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.navbar-2 ul li {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+@media screen and (min-width: 370px) and (max-width: 1200px) {
+  .navbar {
+    display: none;
+  }
+  header {
+    height: 75px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+}
+
+#main_item {
+  background-image: url(/fiorello/assets/scss/images/h3-slider-background.jpg);
+  width: 100%;
+  height: 650px;
+  position: relative;
+}
+
+#valentine {
+  width: 100%;
+  height: 500px;
+  background-color: #f2eded;
+}
+
+#valentine .valentine-items {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+#valentine .video {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  width: 50%;
+  height: 100%;
+  position: relative;
+  top: 50px;
+}
+
+#valentine iframe {
+  min-width: 100%;
+  min-height: 400px;
+}
+
+#valentine .text {
+  margin-left: 10%;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  width: 50%;
+  height: 100%;
+  font-family: 'Courier New', Courier, monospace;
+  font-weight: 200;
+  display: inline-block;
+  position: relative;
+  top: 40px;
+}
+
+#valentine .text h2 {
+  font-size: 35px;
+}
+
+#valentine .text p {
+  position: relative;
+  top: 30px;
+  font-size: 17px;
+}
+
+#valentine .text span {
+  color: #ff0000;
+}
+
+#valentine .text .thanks {
+  margin-top: 50px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+#valentine .text .thanks span {
+  position: relative;
+  margin-top: 20px;
+}
+
+@media screen and (min-width: 870px) and (max-width: 1200px) {
+  #valentine {
+    height: 1300px;
+    width: 100%;
+  }
+  #valentine .valentine-items {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    text-align: center;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    position: relative;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+}
+
+@media screen and (max-width: 870px) {
+  #valentine {
+    height: 1500px;
+  }
+  #valentine .valentine-items {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    text-align: center;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    position: relative;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+}
+
+#experts {
+  background-color: white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  text-align: center;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  background-position: center;
+  width: 100%;
+  height: 625px;
+}
+
+#experts .title {
+  position: relative;
+  top: 50px;
+  text-align: center;
+  font-size: 50px;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+#experts .summary {
+  font-size: 18px;
+  position: relative;
+  top: 80px;
+  text-align: center;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+.experts-logo {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  margin-top: 150px;
+  -ms-flex-line-pack: end;
+      align-content: flex-end;
+}
+
+.experts-logo .logo {
+  text-align: center;
+}
+
+.experts-logo .logo img {
+  width: 200px;
+  height: 200px;
+}
+
+.experts-logo .logo h5 {
+  font-size: 12px;
+}
+
+.experts-logo .logo p {
+  font-size: 10px;
+}
+
+@media screen and (min-width: 1201px) and (max-width: 1400px) {
+  .experts-logo {
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+}
+
+@media screen and (min-width: 870px) and (max-width: 1200px) {
+  #experts {
+    height: 900px;
+  }
+  .experts-logo {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    width: 100%;
+    margin-bottom: 200px;
+  }
+  .experts-logo .logo {
+    position: relative;
+    top: 75px;
+    width: 50%;
+  }
+}
+
+@media screen and (max-width: 870px) {
+  #experts {
+    height: 1500px;
+  }
+  .title {
+    margin-top: 10px;
+    font-size: 30px;
+  }
+  .experts-logo {
+    padding: 0;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    padding-left: 50px;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  .experts-logo .logo {
+    width: 100%;
+    margin-top: 25px;
+  }
+  .experts-logo .logo img {
+    position: relative;
+  }
+}
+
+#join {
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(3, 3, 3, 0.6)), to(rgba(3, 3, 3, 0.3))), url("https://fiorello.qodeinteractive.com/wp-content/uploads/2018/05/h3-background-img.jpg");
+  background: linear-gradient(rgba(3, 3, 3, 0.6), rgba(3, 3, 3, 0.3)), url("https://fiorello.qodeinteractive.com/wp-content/uploads/2018/05/h3-background-img.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: scroll;
+  background-position: center;
+  height: 625px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.join {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  text-align: center;
+}
+
+.join .join_text {
+  text-align: center;
+  padding-top: 100px;
+  margin: 0 auto;
+}
+
+.join .join_text h3 {
+  font-size: 24px;
+  letter-spacing: 2px;
+  color: #fff;
+}
+
+.join_item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: relative;
+  top: 40%;
+}
+
+.join_input {
+  width: 400px;
+  height: 60px;
+  opacity: 0.8;
+}
+
+.join_btn {
+  width: 200px;
+  height: 66px;
+  background-color: #ff0000;
+  color: white;
+  border: none;
+  opacity: 0.8;
+}
+
+.my_container {
+  margin: 0 auto;
+  width: 90%;
+}
+
+.my_container #myCarousel {
+  width: 100%;
+}
+
+@media screen and (max-width: 900px) {
+  .my_container {
+    width: 100%;
+    margin: 0;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: scroll;
+    background-position: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  .join_item {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    position: relative;
+    -ms-flex-preferred-size: auto;
+        flex-basis: auto;
+    position: relative;
+    top: 25%;
+  }
+}
+
+#home_page {
+  background-position: center;
+  background-attachment: fixed;
+  width: 100%;
+  height: 500px;
+  background: url(https://fiorello.qodeinteractive.com/wp-content/uploads/2018/05/h3-slider-background.jpg);
+  background-size: cover;
+  -webkit-animation: slide 20s infinite;
+          animation: slide 20s infinite;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-line-pack: center;
+      align-content: center;
+}
+
+#home_page .home_page_item {
+  top: 100px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  display: inline-block;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 35%;
+  left: 100px;
+  position: relative;
+  -ms-flex-line-pack: center;
+      align-content: center;
+}
+
+#home_page h2 {
+  position: relative;
+  top: 20%;
+  font-size: 40px;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+#home_page span {
+  color: #ff0000;
+}
+
+#home_page P {
+  position: relative;
+  top: 40px;
+  font-size: 18px;
+  opacity: 0.8;
+}
+
+#home_page img {
+  position: relative;
+  top: 30px;
+  width: 200px;
+  height: 50px;
+}
+
+@-webkit-keyframes slide {
+  20% {
+    background: url(https://fiorello.qodeinteractive.com/wp-content/uploads/2018/05/h3-slider-background.jpg);
+    background-size: cover;
+    background-position: center;
+  }
+  40% {
+    background: url(https://fiorello.qodeinteractive.com/wp-content/uploads/2018/05/h3-slider-background-2.jpg);
+    background-size: cover;
+    background-position: center;
+  }
+  60% {
+    background: url(https://fiorello.qodeinteractive.com/wp-content/uploads/2018/05/h3-slider-background-3.jpg);
+    background-size: cover;
+    background-position: center;
+  }
+  80% {
+    background: url(https://fiorello.qodeinteractive.com/wp-content/uploads/2018/05/h3-slider-background.jpg);
+    background-size: cover;
+    background-position: center;
+  }
+  100% {
+    background: url(https://fiorello.qodeinteractive.com/wp-content/uploads/2018/05/h3-slider-background-2.jpg);
+    background-size: cover;
+    background-position: center;
+  }
+}
+
+@keyframes slide {
+  20% {
+    background: url(https://fiorello.qodeinteractive.com/wp-content/uploads/2018/05/h3-slider-background.jpg);
+    background-size: cover;
+    background-position: center;
+  }
+  40% {
+    background: url(https://fiorello.qodeinteractive.com/wp-content/uploads/2018/05/h3-slider-background-2.jpg);
+    background-size: cover;
+    background-position: center;
+  }
+  60% {
+    background: url(https://fiorello.qodeinteractive.com/wp-content/uploads/2018/05/h3-slider-background-3.jpg);
+    background-size: cover;
+    background-position: center;
+  }
+  80% {
+    background: url(https://fiorello.qodeinteractive.com/wp-content/uploads/2018/05/h3-slider-background.jpg);
+    background-size: cover;
+    background-position: center;
+  }
+  100% {
+    background: url(https://fiorello.qodeinteractive.com/wp-content/uploads/2018/05/h3-slider-background-2.jpg);
+    background-size: cover;
+    background-position: center;
+  }
+}
+
+@media screen and (min-width: 370px) and (max-width: 900px) {
+  #home_page {
+    width: 100%;
+    height: 500px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    background-position: center;
+  }
+  .home_page_item {
+    top: -50px;
+    position: relative;
+    text-align: center;
+    width: 100%;
+  }
+}
+
+#flowers {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  width: 100%;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#flowers .flower_sorts {
+  display: block;
+  width: 100%;
+  height: 80px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  position: relative;
+  text-align: center;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#flowers a {
+  font-size: 18px;
+  text-decoration: none;
+  color: black;
+  position: relative;
+  opacity: 0.8;
+  margin-left: 50px;
+}
+
+#flowers li {
+  list-style-type: none;
+}
+
+#flowers .flowers {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+#flowers .flower_item {
+  position: relative;
+  text-align: center;
+}
+
+#flowers p {
+  font-size: 13px;
+}
+
+#flowers span {
+  position: relative;
+  top: -10px;
+  font-size: 12px;
+  opacity: 0.8;
+}
+
+#flowers img {
+  width: 300px;
+  height: 400px;
+  position: relative;
+  margin: 12px;
+}
+/*# sourceMappingURL=main.css.map */

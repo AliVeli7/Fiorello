@@ -1,0 +1,840 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+header {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 100px;
+
+
+        #home {
+            display: inline-block;
+            position: relative;
+
+            &::after {
+                content: "";
+                position: absolute;
+                left: 0;
+                top: 15px;
+                width: 100%;
+                height: 2px;
+                background-color: green;
+            }
+        }
+
+        ul {
+            li {
+                display: inline-block;
+                list-style-type: none;
+                padding: 0px 30px;
+                font-size: 14px;
+                font-family: 'Courier New', Courier, monospace;
+            }
+        }
+
+    a {
+        img {
+            width: 205px;
+            height: 25px;
+        }
+    }
+
+    #img {
+        margin-left: 60px;
+    }
+
+    .icons {
+        padding-left: 15px;
+        margin-top: -15px;
+
+        a {
+            color: rgb(58, 48, 48);
+            text-decoration: none;
+            font-size: 19px;
+            padding: 0 10px;
+
+            p {
+                display: inline;
+                font-size: 12px;
+            }
+
+            .fa-bag-shopping {
+                padding: 0 12px;
+            }
+
+            .fa-magnifying-glass {
+                transition: all 1s ease;
+
+                &:hover {
+                transform: rotateZ(360deg);
+                color: red;
+                }
+            }
+        }
+    }
+    
+}
+
+.home-dropdown,
+.pages-dropdown,
+.portfolio-dropdown,
+.blog-dropdown,
+.elements-dropdown {
+    position: relative;
+}
+
+.home-dropdown-content,
+.pages-dropdown-content,
+.shop-dropdown-content,
+.portfolio-dropdown-content,
+.blog-dropdown-content,
+.elements-dropdown-content {
+    background: white;
+    position: absolute;
+    left: 15px;
+    min-width: 220px;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.1s ease;
+
+    a {
+        padding: 8px 16px;
+        text-decoration: none;
+        display: block;
+        font-size: 14px;
+    }
+}
+
+#home,
+#pages,
+#shop {
+    &::before {
+        background: none repeat scroll 0 0 transparent;
+        bottom: 0;
+        content: "";
+        display: block;
+        height: 1.5px;
+        left: 50%;
+        position: absolute;
+        background: rgb(0, 0, 0);
+        transition: width 0.3s ease 0s, left 0.3s ease 0s;
+        width: 0;
+    }
+
+    &:hover::before {
+        width: 100%;
+        left: 0;
+    }
+
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+    display: inline-block;
+    position: relative;
+
+    
+}
+
+.portfolio-dropdown a,
+.blog-dropdown a,
+.elements-dropdown a,
+.home-dropdown a,
+.pages-dropdown a,
+.shop-dropdown a {
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+    display: block;
+    position: relative;
+
+    &::before {
+        background: none repeat scroll 0 0 transparent;
+        bottom: 0;
+        content: "";
+        display: block;
+        height: 1.5px;
+        left: 50%;
+        position: absolute;
+        background: rgb(0, 0, 0);
+        transition: width 0.3s ease 0s, left 0.3s ease 0s;
+        width: 0;
+    }
+
+    &:hover::before {
+        width: 100%;
+        left: 0;
+    }
+}
+
+
+
+
+#cart-count {
+    font-size: 10px;
+    background: #ff0000;
+    color: #fff;
+    padding: 0 2px;
+    vertical-align: top;
+    margin-left: -15px;
+    border-radius: 100%;
+    position: relative;
+    left: -4px;
+    top: 2px;
+}
+
+
+.portfolio-dropdown-content {
+    min-width: 200px;
+}
+
+.shop-dropdown-content {
+    display: flex;
+    justify-content: space-between;
+    position: absolute;
+    min-width: 83%;
+    width: 1075px;
+    left: -250px;
+    padding: 30px;
+
+    h1 {
+        padding-bottom: 10px;
+        font-size: 25px;
+    }
+}
+
+.home-dropdown:hover .home-dropdown-content,
+.pages-dropdown:hover .pages-dropdown-content,
+.shop-dropdown:hover .shop-dropdown-content,
+.portfolio-dropdown:hover .portfolio-dropdown-content,
+.blog-dropdown:hover .blog-dropdown-content,
+.elements-dropdown:hover .elements-dropdown-content {
+    opacity: 1;
+    pointer-events: all;
+}
+
+
+.portfolio-layout-main-sub-menu,
+.blog-main-sub-menu,
+.elements-main-sub-menu {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.portfolio-layout-main-sub-menu li,
+.blog-main-sub-menu li {
+    position: relative;
+    left: -20%;
+    padding: 3px 0;
+
+    a {
+        width: 100%;
+    }
+}
+
+.portfolio-layout-secondary-sub-menu,
+.portfolio-single-secondary-sub-menu,
+.blog-secondary-sub-menu,
+.elements-secondary-sub-menu {
+    background: white;
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 0px;
+    left: 120%;
+    width: 100%;
+    display: none;
+}
+
+.elements-secondary-sub-menu {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    width: 100%;
+    top: 10px;
+    left: 100%;
+    padding: 8px 0;
+    display: none;
+
+    a {
+        padding: 10px 20px;
+    }
+}
+
+.elements-main-sub-menu li {
+    position: relative;
+    text-align: left;
+    padding: 3px 0;
+
+    a {
+        width: 100%;
+    }
+}
+
+.portfolio-layout-main-sub-menu li:hover .portfolio-layout-secondary-sub-menu,
+.portfolio-layout-main-sub-menu li:hover .portfolio-single-secondary-sub-menu,
+.blog-main-sub-menu li:hover .blog-secondary-sub-menu,
+.elements-main-sub-menu li:hover .elements-secondary-sub-menu {
+    display: block;
+}
+
+.layout-arrow {
+    font-size: 18px;
+    position: relative;
+    left: 18%;
+}
+
+.single-arrow {
+    font-size: 18px;
+    position: relative;
+    left: 24.5%;
+}
+
+.post-arrow {
+    font-size: 18px;
+    position: relative;
+    left: 40%;
+}
+
+.elements-arrow {
+    font-size: 18px;
+    position: relative;
+}
+
+.elements-dropdown-content {
+    text-align: left;
+    left: -85px;
+    min-width: 200px;
+}
+
+.blog-dropdown-content {
+    min-width: 200px;
+}
+
+
+.sidebar {
+    position: fixed;
+    height: 500px;
+    right: 0;
+    display: none;
+}
+
+.navbar {
+    margin-top: 20px;
+    z-index: 5;
+}
+
+.navbar-2 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 150px 165px;
+
+    ul {
+        display: flex;
+        flex-direction: column;
+
+        li {
+            display: flex;
+            flex-direction: column;
+        }
+    }
+}
+
+
+
+@media screen and (min-width: 370px) and (max-width: 1200px) {
+    .navbar{
+        display: none;
+    }
+
+    header{
+        height: 75px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+
+}
+
+#main_item {
+    background-image: url(/fiorello/assets/scss/images/h3-slider-background.jpg);
+    width: 100%;
+    height: 650px;
+    position: relative;
+}
+
+
+
+#valentine {
+    width: 100%;
+    height: 500px;
+    background-color: #f2eded;
+
+    .valentine-items {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        box-sizing: border-box;
+        justify-content: space-around;
+    }
+
+    .video {
+        box-sizing: border-box;
+        width: 50%;
+        height: 100%;
+        position: relative;
+        top: 50px;
+
+    }
+
+    iframe {
+        min-width: 100%;
+        min-height: 400px;
+    }
+
+    .text {
+        margin-left: 10%;
+        box-sizing: border-box;
+        width: 50%;
+        height: 100%;
+        font-family: 'Courier New', Courier, monospace;
+        font-weight: 200;
+        display: inline-block;
+        position: relative;
+        top: 40px;
+
+        h2 {
+            font-size: 35px;
+        }
+
+        p {
+            position: relative;
+            top: 30px;
+            font-size: 17px;
+        }
+
+        span {
+            color: #ff0000;
+        }
+
+        .thanks {
+            margin-top: 50px;
+            display: flex;
+            flex-direction: column;
+
+            span {
+                position: relative;
+                margin-top: 20px;
+            }
+        }
+    }
+
+
+}
+
+@media screen and(min-width:1201px) and(max-width:1400px) {
+    #valentine {}
+
+}
+
+@media screen and(min-width:870px) and(max-width:1200px) {
+    #valentine {
+        height: 1300px;
+        width: 100%;
+
+
+        .valentine-items {
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+            box-sizing: border-box;
+            position: relative;
+            justify-content: center;
+        }
+    }
+
+
+}
+
+@media screen and(max-width:870px) {
+    #valentine {
+        height: 1500px;
+
+        .valentine-items {
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+            box-sizing: border-box;
+            position: relative;
+            justify-content: center;
+        }
+    }
+}
+
+
+#experts {
+    background-color: white;
+    display: flex;
+    text-align: center;
+    box-sizing: border-box;
+    background-position: center;
+    width: 100%;
+    height: 625px;
+
+    .title {
+        position: relative;
+        top: 50px;
+        text-align: center;
+        font-size: 50px;
+        font-family: 'Courier New', Courier, monospace;
+    }
+
+    .summary {
+        font-size: 18px;
+        position: relative;
+        top: 80px;
+        text-align: center;
+        font-family: 'Courier New', Courier, monospace;
+    }
+}
+
+
+
+.experts-logo {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 150px;
+    align-content: flex-end;
+
+    .logo {
+        text-align: center;
+
+        img {
+            width: 200px;
+            height: 200px;
+        }
+
+        h5 {
+            font-size: 12px;
+        }
+
+        p {
+            font-size: 10px;
+        }
+    }
+}
+
+
+@media screen and(min-width:1201px) and(max-width:1400px) {
+    .experts-logo {
+        justify-content: space-between;
+    }
+}
+
+@media screen and(min-width:870px) and(max-width:1200px) {
+    #experts {
+        height: 900px;
+    }
+
+    .experts-logo {
+        display: flex;
+        flex-wrap: wrap;
+        width: 100%;
+        margin-bottom: 200px;
+
+        .logo {
+            position: relative;
+            top: 75px;
+            width: 50%;
+        }
+    }
+}
+
+@media screen and(max-width:870px) {
+    #experts {
+        height: 1500px;
+    }
+
+    .title {
+        margin-top: 10px;
+        font-size: 30px;
+    }
+
+
+    .experts-logo {
+        padding: 0;
+        flex-direction: column;
+        display: flex;
+        padding-left: 50px;
+        box-sizing: border-box;
+        justify-content: center;
+
+        .logo {
+            width: 100%;
+            margin-top: 25px;
+
+            img {
+                position: relative;
+            }
+        }
+    }
+}
+
+
+
+#join {
+    background: linear-gradient(rgba(3, 3, 3, 0.60),
+            rgba(3, 3, 3, 0.3)), url("https://fiorello.qodeinteractive.com/wp-content/uploads/2018/05/h3-background-img.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: scroll;
+    background-position: center;
+    height: 625px;
+    box-sizing: border-box;
+}
+
+
+.join {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+
+    .join_text {
+        text-align: center;
+        padding-top: 100px;
+        margin: 0 auto;
+
+        h3 {
+            font-size: 24px;
+            letter-spacing: 2px;
+            color: #fff;
+        }
+    }
+
+}
+
+.join_item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    top: 40%;
+}
+
+.join_input {
+    width: 400px;
+    height: 60px;
+    opacity: 0.8;
+}
+
+.join_btn {
+    width: 200px;
+    height: 66px;
+    background-color: #ff0000;
+    color: white;
+    border: none;
+    opacity: 0.8;
+}
+
+.my_container {
+    margin: 0 auto;
+    width: 90%;
+
+    #myCarousel {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width:900px) {
+    .my_container {
+        width: 100%;
+        margin: 0;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-attachment: scroll;
+        background-position: center;
+        justify-content: center;
+    }
+
+    .join_item {
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        flex-basis: auto;
+        position: relative;
+        top: 25%;
+    }
+}
+
+#home_page{
+    background-position: center;
+    background-attachment: fixed;
+    width: 100%;
+    height: 500px;  
+    background: url(https://fiorello.qodeinteractive.com/wp-content/uploads/2018/05/h3-slider-background.jpg);
+    background-size: cover;
+    animation: slide 20s infinite;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+
+    .home_page_item{
+        top: 100px;
+        display: flex;
+        display: inline-block;
+        flex-direction: column;
+        width: 35%;
+        left: 100px;
+        position: relative;
+        align-content: center;
+    }
+
+
+    h2{
+        position: relative;
+        top: 20%;
+        font-size: 40px;
+        font-family: Georgia, 'Times New Roman', Times, serif;
+    }
+    span{
+        color: #ff0000;
+    }
+    P{
+        position: relative;
+        top: 40px;
+        font-size: 18px;
+        opacity: 0.8;
+    }
+    img{
+        position: relative;
+        top: 30px;
+        width: 200px;
+        height: 50px;
+    }
+
+}
+
+@keyframes slide{
+    20%{
+        background: url(https://fiorello.qodeinteractive.com/wp-content/uploads/2018/05/h3-slider-background.jpg) ;
+        background-size: cover;
+        background-position: center;
+        
+        
+        
+    }
+    40%{
+        background: url(https://fiorello.qodeinteractive.com/wp-content/uploads/2018/05/h3-slider-background-2.jpg) ;
+        background-size: cover;
+        background-position: center;
+    }
+    60%{
+        background: url(https://fiorello.qodeinteractive.com/wp-content/uploads/2018/05/h3-slider-background-3.jpg) ;
+        background-size: cover;
+        background-position: center;
+    }
+    80%{
+        background: url(https://fiorello.qodeinteractive.com/wp-content/uploads/2018/05/h3-slider-background.jpg) ;
+        background-size: cover;
+        background-position: center;
+    }
+    100%{
+        background: url(https://fiorello.qodeinteractive.com/wp-content/uploads/2018/05/h3-slider-background-2.jpg) ;
+        background-size: cover;
+        background-position: center;
+    }
+}
+
+@media screen and(min-width:370px) and(max-width:900px) {
+    #home_page{
+        width: 100%;
+        height: 500px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background-position: center;
+    }
+
+    .home_page_item{
+        top: -50px  ;
+        position: relative;
+        text-align: center;
+        width: 100%;
+    }
+}
+
+
+#flowers{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    flex-wrap: wrap;
+    align-items: center;
+
+
+    .flower_sorts{
+        display: block;
+        width: 100%;
+        height: 80px;
+        display: flex;
+        justify-content: space-between;
+        flex-direction: row;
+        position: relative;
+        text-align: center;
+        align-content: center;
+        align-items: center;
+    }
+    a{
+        font-size: 18px;
+        text-decoration: none;
+        color: black;
+        position: relative;
+        opacity: 0.8;
+        margin-left: 50px;
+        
+    }
+
+    li{
+        list-style-type: none;
+    }
+    
+
+
+    .flowers{
+        display: flex;
+        flex-wrap: wrap;
+        
+    }
+
+    .flower_item{
+        position: relative;
+        text-align: center;
+    }
+
+    p{
+        font-size: 13px;
+    }
+
+    span{
+        position: relative;
+        top: -10px;
+        font-size: 12px;
+        opacity: 0.8;
+    }
+
+    img{
+        width: 300px;
+        height: 400px;
+        position: relative;
+        margin: 12px;
+    }
+}
+
+

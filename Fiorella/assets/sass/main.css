@@ -961,6 +961,12 @@ header .icons a .fa-magnifying-glass:hover {
   margin-left: 50px;
 }
 
+#flowers :hover::a {
+  color: #ff0000;
+  -webkit-transition-duration: 0.1s;
+          transition-duration: 0.1s;
+}
+
 #flowers li {
   list-style-type: none;
 }
